@@ -24,7 +24,7 @@ state = {
     render () {
         return (
             <Aux>
-                <Burger ingredients = {this.state.ingredients} />
+                <Burger />
                 <div>Build Controls</div>
       
             </Aux>
