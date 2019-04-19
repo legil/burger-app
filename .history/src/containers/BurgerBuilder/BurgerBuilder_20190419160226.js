@@ -4,7 +4,6 @@ import Aux from '../../hoc/Auxiliary';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
-import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 
 
 const  INGREDIENT_PRICES = {
@@ -83,9 +82,7 @@ removeIngredientHandler = (type) => {
         // {salad: true, meat: false, ...}
         return (
             <Aux>
-                <Modal>
-                    <OrderSummary ingredients={this.state.ingredients}></OrderSummary>
-                </Modal>
+                <Modal />
                 <Burger ingredients = {this.state.ingredients} />
                 <BuildControls ingredientAdded={this.addIngredientHandler} 
                                ingredientRemoved={this.removeIngredientHandler} 
