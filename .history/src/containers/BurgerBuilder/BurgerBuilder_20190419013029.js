@@ -35,10 +35,7 @@ addIngredientHandler = (type) => {
         ...this.state.ingredients
     };
     updatedIngredients[type] = updatedCount;
-    const priceAddition = INGREDIENT_PRICES[type];
-    const oldPrice = this.state.totalPrice;
-    const newPrice = oldPrice + priceAddition;
-    this.setState({totalPrice: newPrice, ingredients: updatedIngredients});
+
 }
 
 removeIngredientHandler = (type) => {
@@ -50,7 +47,8 @@ removeIngredientHandler = (type) => {
         return (
             <Aux>
                 <Burger ingredients = {this.state.ingredients} />
-                <BuildControls ingredientAdded={this.addIngredientHandler} />
+                <BuildControls />
+      
             </Aux>
             
         );
