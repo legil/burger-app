@@ -29,7 +29,11 @@ state = {
     purchasable: false
 }
 
-updatePurchaseState(ingredients) {
+updatePurchaseState() {
+    const ingredients = {
+        ...this.state.ingredients
+    };
+
     const sum = Object.keys(ingredients)
                       .map(igKey => {
                           return ingredients[igKey]
@@ -51,7 +55,7 @@ addIngredientHandler = (type) => {
     const oldPrice = this.state.totalPrice;
     const newPrice = oldPrice + priceAddition;
     this.setState({totalPrice: newPrice, ingredients: updatedIngredients});
-    this.updatePurchaseState(updatedIngredients);
+    this.updatePurchaseState();
 }
 
 removeIngredientHandler = (type) => {
@@ -68,7 +72,7 @@ removeIngredientHandler = (type) => {
     const oldPrice = this.state.totalPrice;
     const newPrice = oldPrice - priceAddition;
     this.setState({totalPrice: newPrice, ingredients: updatedIngredients});
-    this.updatePurchaseState(updatedIngredients);
+    this.updatePurchaseState();
 }
 
     render () {
