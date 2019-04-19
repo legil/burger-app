@@ -74,7 +74,7 @@ removeIngredientHandler = (type) => {
     this.updatePurchaseState(updatedIngredients);
 }
 
-purchaseHandler = () => {
+purchaseHandler() {
     this.setState({purchasing: true});
 }
 
