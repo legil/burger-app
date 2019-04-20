@@ -78,11 +78,11 @@ purchaseHandler = () => {
     this.setState({purchasing: true});
 }
 
-purchaseCanceledHandler = () => {
+purchaseCancelHandler = () => {
     this.setState({purchasing: false});
 }
 
-purchaseContinuedHandler = () => {
+purchaseContinueHandler = () ={
     alert('You continue!');
 }
 
@@ -96,11 +96,8 @@ purchaseContinuedHandler = () => {
         // {salad: true, meat: false, ...}
         return (
             <Aux>
-                <Modal show={this.state.purchasing} modalClosed={this.purchaseCanceledHandler}>
-                    <OrderSummary ingredients={this.state.ingredients}
-                                  price={this.state.totalPrice}
-                                  purchaseCanceled={this.purchaseCanceledHandler}
-                                  purchaseContinued={this.purchaseContinuedHandler} />
+                <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
+                    <OrderSummary ingredients={this.state.ingredients}></OrderSummary>
                 </Modal>
                 <Burger ingredients = {this.state.ingredients} />
                 <BuildControls ingredientAdded={this.addIngredientHandler} 
